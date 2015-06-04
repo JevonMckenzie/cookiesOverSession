@@ -18,7 +18,7 @@ gem 'protected_attributes'
 # json (de)serialization
 gem 'json'
 
-#gem 'rack-ssl-enforcer'
+gem 'rack-ssl-enforcer'
 
 # data encryption
 gem 'rbnacl-libsodium'
