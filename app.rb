@@ -5,7 +5,7 @@ require_relative 'model/user.rb'
 require_relative 'helpers/credit_card_api_helper.rb'
 require 'rack-flash'
 require 'config_env'
-require 'rack/ssl-enforcer'
+
 
 # credit card api service
 class CreditCardAPI < Sinatra::Base
@@ -19,17 +19,12 @@ class CreditCardAPI < Sinatra::Base
     ConfigEnv.path_to_config("#{__dir__}/config/config_env.rb")
   end
 
-  configure :production do
-    use Rack::SslEnforcer
-    set :session_secret, Env['MSG_KEY']
-  end
-
-  end
-
   configure do
-    use Rack::Session::Cookie, secret: settings.session_secret
+    use Rack::Session::Cookie, secret: ENV['MSG_KEY']
     use Rack::Flash, :sweep => true
   end
+
+
 
   # before do
   #   @current_user = session[:user_id] ? User.find_by_id(session[:user_id]): nil
