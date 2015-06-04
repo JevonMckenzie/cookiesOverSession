@@ -7,6 +7,8 @@ ruby '2.2.2'
 # web server
 gem 'thin'
 
+gem 'rack-ssl-enforcer'
+
 # web framework
 gem 'sinatra'
 
