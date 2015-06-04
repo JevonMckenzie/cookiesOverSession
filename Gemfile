@@ -2,7 +2,7 @@
 source 'https://rubygems.org'
 
 # ruby version
-ruby '2.2.2'
+ruby '2.2.1'
 
 # web server
 gem 'thin'
