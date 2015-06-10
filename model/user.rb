@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   validates :dob, presence: true
 
   # ignore these fields when doing mass assignment
-  attr_protected :hashed_password, :password_salt,
-                 :fullname_nonce, :address_nonce, :dob_nonce
+  # attr_protected :hashed_password, :password_salt,
+  #                :fullname_nonce, :address_nonce, :dob_nonce
 
   # static methods
   def self.authenticate!(username, password)
